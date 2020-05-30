@@ -1,0 +1,34 @@
+version: "3.5"
+
+services:
+  app:
+    container_name: hiroba-content-api
+    tty: true
+    build:
+      context: .
+      target: builder
+    ports:
+      - "8080:8080"
+    environment:
+      DB_ADDR: db:3306
+      DB_USER: refmag
+      DB_NAME: refmag
+      DB_PASS: refmag
+      JWT_PUB_KEY_PATH: ./rsa/public-key.pem
+    depends_on:
+      - db
+    command: ./bin/server
+  db:
+    container_name: hiroba-mysql
+    hostname: db
+    image: mysql:8.0.20
+    environment:
+      MYSQL_ROOT_PASSWORD: hiroba
+      MYSQL_USER: hiroba
+      MYSQL_PASSWORD: hiroba
+      MYSQL_DATABASE: hiroba
+    command: --default-authentication-plugin=mysql_native_password
+    expose:
+      - "3306"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
