@@ -11,9 +11,9 @@ services:
       - "8080:8080"
     environment:
       DB_ADDR: db:3306
-      DB_USER: refmag
-      DB_NAME: refmag
-      DB_PASS: refmag
+      DB_USER: hiroba
+      DB_NAME: hiroba
+      DB_PASS: hiroba
       JWT_PUB_KEY_PATH: ./rsa/public-key.pem
     depends_on:
       - db
