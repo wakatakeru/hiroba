@@ -1,4 +1,4 @@
-name: CONTENT
+name: Content API
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: ^1.14
-      id: go
+      id: content
 
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
