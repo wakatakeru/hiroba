@@ -1,2 +1,2 @@
-# Hiroba Content API
+# Hiroba
 Hiroba: Headless CMS written in Golang
