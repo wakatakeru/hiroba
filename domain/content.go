@@ -7,3 +7,5 @@ type Content struct {
 	Title  string `json:"title"`
 	Body   string `json:"body"`
 }
+
+type Contents []Content
