@@ -6,7 +6,7 @@ package usecase
 
 import (
 	gomock "github.com/golang/mock/gomock"
-	domain "github.com/wakatakeru/hiroba-content-api/domain"
+	domain "github.com/wakatakeru/hiroba/apis/content/domain"
 	reflect "reflect"
 )
 
