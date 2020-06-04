@@ -1,6 +1,8 @@
 package usecase
 
-import "github.com/wakatakeru/hiroba-content-api/domain"
+import (
+	"github.com/wakatakeru/hiroba-content-api/domain"
+)
 
 type ContentInteractor struct {
 	ContentRepository ContentRepository
