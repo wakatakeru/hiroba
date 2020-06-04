@@ -1,4 +1,4 @@
-name: CONTENT_API
+name: CONTENT
 
 on:
   push:
