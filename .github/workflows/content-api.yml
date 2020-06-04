@@ -5,12 +5,12 @@ on:
     branches:
       - master
     paths: 
-      - './apis/content/*'
+      - './apis/content/**'
   pull_request:
     branches: 
       - master
     paths: 
-      - './apis/content/*'
+      - './apis/content/**'
 
 jobs:
   build:
