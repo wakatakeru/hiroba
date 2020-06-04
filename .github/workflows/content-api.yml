@@ -1,12 +1,12 @@
-name: Content API
+name: CONTENT_API
 
 on:
   push:
     branches: [master]
-    paths: ['./apis/content/**']
+    paths: ['./apis/content/*']
   pull_request:
     branches: [master]
-    paths: ['./apis/content/**']
+    paths: ['./apis/content/*']
 
 jobs:
   build:
