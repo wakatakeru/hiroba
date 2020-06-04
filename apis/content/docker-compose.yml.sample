@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
   app:
-    container_name: hiroba-content-api
+    container_name: hiroba/apis/content
     tty: true
     build:
       context: .
@@ -19,7 +19,7 @@ services:
       - db
     command: ./bin/server
   db:
-    container_name: hiroba-mysql
+    container_name: hiroba/apis/content/mysql
     hostname: db
     image: mysql:8.0.20
     environment:

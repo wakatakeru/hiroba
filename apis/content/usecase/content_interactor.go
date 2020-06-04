@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"github.com/wakatakeru/hiroba-content-api/domain"
+	"github.com/wakatakeru/hiroba/apis/content/domain"
 )
 
 type ContentInteractor struct {
