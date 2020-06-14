@@ -43,7 +43,7 @@ func (repo *ContentRepository) Update(c domain.Content) (count int, err error) {
 		c.Body,
 	)
 
-	if err !- nil {
+	if err != nil {
 		return
 	}
 
@@ -66,9 +66,8 @@ func (repo *ContentRepository) FindByID(id int) (content domain.Content, err err
 		return
 	}
 
-	var id int
-	var siteID int 
-	var userID int 
+	var siteID int
+	var userID int
 	var title string
 	var body string
 
@@ -99,24 +98,23 @@ func (repo *ContentRepository) FindBySiteID(siteID int) (contents domain.Content
 	for row.Next() {
 
 		var id int
-		var siteID int 
-		var userID int 
+		var siteID int
+		var userID int
 		var title string
 		var body string
 
-	
 		if err = row.Scan(&id, &siteID, &userID, &title, &body); err != nil {
 			continue
 		}
 
 		content := domain.Content{
-			ID: id,
+			ID:     id,
 			SiteID: siteID,
 			UserID: userID,
-			Title: title,
-			Body: body,
+			Title:  title,
+			Body:   body,
 		}
-		
+
 		contents = append(contents, content)
 	}
 
@@ -124,7 +122,7 @@ func (repo *ContentRepository) FindBySiteID(siteID int) (contents domain.Content
 }
 
 func (repo *ContentRepository) FindByUserID(userID int) (contents domain.Contents, err error) {
-		row, err := repo.Query(
+	row, err := repo.Query(
 		"SELECT id, site_id, user_id, title, body contents WHERE user_id=?",
 		userID,
 	)
@@ -136,26 +134,25 @@ func (repo *ContentRepository) FindByUserID(userID int) (contents domain.Content
 	for row.Next() {
 
 		var id int
-		var siteID int 
-		var userID int 
+		var siteID int
+		var userID int
 		var title string
 		var body string
 
-	
 		if err = row.Scan(&id, &siteID, &userID, &title, &body); err != nil {
 			continue
 		}
 
 		content := domain.Content{
-			ID: id,
+			ID:     id,
 			SiteID: siteID,
 			UserID: userID,
-			Title: title,
-			Body: body,
+			Title:  title,
+			Body:   body,
 		}
-		
+
 		contents = append(contents, content)
 	}
-	
+
 	return
 }
