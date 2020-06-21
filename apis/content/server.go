@@ -1,10 +1,9 @@
 package main
 
 import (
-	"log"
+	"github.com/wakatakeru/hiroba/apis/content/infrastructure"
 )
 
 func main() {
-	// TODO: Implement
-	log.Print("main")
+	infrastructure.Router.Run()
 }

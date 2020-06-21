@@ -1,5 +1,5 @@
 package controllers
 
 type JWTHandler interface {
-	Verify(string) (string, error)
+	Verify(string) (int, error)
 }
